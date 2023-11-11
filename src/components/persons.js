@@ -1,15 +1,10 @@
 import React from "react";
+import MiniProfile from "./mini_profile";
 
 function Persons() {
   return (
     <div className="col-span-2 bg-slate-400">
-      <div className="flex m-3 ">
-        <div className="bg-black rounded-full w-10 h-10 text-center">s</div>
-        <div className="ml-3 text-black">
-          <h1>Username</h1>
-          <span className="text-sm text-gray-600">Id: UserId</span>
-        </div>
-      </div>
+      <MiniProfile />
       <div className="mt-10 text-center bg-white w-11/12 rounded-2xl m-auto">
         <div className="p-5">
           <form>
@@ -46,7 +41,25 @@ function Persons() {
               />
             </div>
           </form>
-          <div className="mt-5 text-black text-start">persons</div>
+          <div className="mt-3 text-black text-start">
+            <div
+              className="text-black text-start"
+              // responsive bir şekilde ayarlaması yapılır.
+              style={{ maxHeight: "300px", overflowY: "auto" }}
+            >
+              {/* Container with fixed height and scrollable */}
+              {[1, 2, 3, 4, 5, 6, 7].map((index) => (
+                <div key={index} className="mt-5 justify-between flex">
+                  <div className="rounded-full w-10 h-10 bg-red-500">w</div>
+                  <div className="ml-3">
+                    <h1 className="text-sm">deneme</h1>
+                    <div className="text-xs text-gray-600">deneme</div>
+                  </div>
+                  <div>asdasd</div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>
