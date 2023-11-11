@@ -1,6 +1,6 @@
 import React from "react";
 import "../app/globals.css";
-import Persons from "./persons";
+import Persons from "../components/persons";
 import Message from "@/components/message";
 
 function Chat() {
