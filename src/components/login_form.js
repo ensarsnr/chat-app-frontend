@@ -1,6 +1,7 @@
 import services from "@/services/auth";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { Router } from "next/router";
 import { useState } from "react";
 
 function LoginForm() {
@@ -13,9 +14,17 @@ function LoginForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const response = await services.login(email, pass);
+    console.log(response);
     if (response && response.data) {
       console.log(response.data.message);
-      router.push("/chat");
+      console.log("Username:", response.data.user.userId);
+      router.push({
+        pathname: "/chat",
+        query: {
+          username: response.data.user.username,
+          userId: response.data.userId.userId,
+        },
+      });
     } else {
       console.error("Response or response.data is undefined.");
     }
