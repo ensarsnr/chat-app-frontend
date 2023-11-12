@@ -6,7 +6,7 @@ const api = axios.create({
 
 const register = async (username, email, pass) => {
   try {
-    const response = await api.post("/user/add", {
+    const response = await api.post("/auth/add", {
       username: username,
       email: email,
       pass: pass,
@@ -19,7 +19,7 @@ const register = async (username, email, pass) => {
 
 const login = async (email, pass) => {
   try {
-    const response = await api.post("/user/login", {
+    const response = await api.post("/auth/login", {
       email: email,
       pass: pass,
     });
