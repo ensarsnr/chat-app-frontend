@@ -1,5 +1,3 @@
-// api/persons-api.js dosyası
-
 import userServices from "@/services/user";
 
 export async function getStaticPaths() {
@@ -10,7 +8,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false, // veya true olarak ayarlayabilirsiniz
+    fallback: false,
   };
 }
 
