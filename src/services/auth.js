@@ -4,9 +4,11 @@ const api = axios.create({
   baseURL: "http://localhost:3001",
 });
 
-const register = async (username, email, pass) => {
+const register = async (name, surname, username, email, pass) => {
   try {
     const response = await api.post("/auth/add", {
+      name: name,
+      surname: surname,
       username: username,
       email: email,
       pass: pass,
