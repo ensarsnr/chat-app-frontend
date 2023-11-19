@@ -3,8 +3,9 @@ import userServices from "@/services/user";
 import React, { useEffect, useState } from "react";
 import { IoIosSettings } from "react-icons/io";
 import Avatar from "./avatar";
+import Settings from "./settings";
 
-function Persons({ onPersonClick, username, userId }) {
+function Persons({ openSettings, onPersonClick, username, userId }) {
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
   const [search, setSearch] = useState("");
@@ -58,7 +59,14 @@ function Persons({ onPersonClick, username, userId }) {
           </div>
         </div>
         <div className="text-black mr-3 justify-center items-center flex">
-          <IoIosSettings size={20} color="gray" />
+          <IoIosSettings
+            type="button"
+            onClick={openSettings}
+            o
+            size={20}
+            color="gray"
+            className="cursor-pointer"
+          />
         </div>
       </div>
       <div className="mt-2 text-center bg-white w-11/12 shadow-lg rounded-2xl m-auto">
@@ -110,13 +118,15 @@ function Persons({ onPersonClick, username, userId }) {
                   <Avatar pic={pic} />
                   <div className="w-3/5 ml-3">
                     <h1 className="text-sm">
-                      {index.name} {index.username}
+                      {index.name} {index.surname}
                     </h1>
-                    <div className="text-xs text-gray-600">deneme</div>
+                    <div className="text-xs text-gray-600">
+                      #{index.username}
+                    </div>
                   </div>
                   <div className="flex items-center">
                     <div className="bg-red-600 text-white rounded-full w-6 h-6 mr-2 flex items-center justify-center">
-                      <span>1</span>
+                      {/* <span>1</span> */}
                     </div>
                   </div>
                 </div>
