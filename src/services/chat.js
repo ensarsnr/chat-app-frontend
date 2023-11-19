@@ -4,11 +4,11 @@ const api = axios.create({
   baseURL: "http://localhost:3001",
 });
 
-const sendMessage = async (conversationId, sender, content) => {
+const sendMessage = async (conversationId, { sender, content }) => {
   try {
-    const response = await axios.post(`/chat/conversations/${conversationId}`, {
-      sender,
-      content,
+    const response = await api.post(`/chat/conversations/${conversationId}`, {
+      sender: sender,
+      content: content,
     });
     return response.data;
   } catch (error) {
