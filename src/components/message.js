@@ -10,6 +10,7 @@ import useWindowSize from "@/hooks/useWindowSize";
 import Start from "./start";
 
 function Message({ userId, selectedUser }) {
+  //Hooks
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
   const [pic, setPic] = useState("");
@@ -27,6 +28,7 @@ function Message({ userId, selectedUser }) {
     maxHeight: `${maxContainerHeight}px`,
   };
 
+  // Functions
   const scrollToBottom = () => {
     if (messagesContainerRef.current) {
       messagesContainerRef.current.scrollTop =
@@ -127,7 +129,12 @@ function Message({ userId, selectedUser }) {
                   }
                 >
                   {message.sender !== userId && (
-                    <div className="rounded-full bg-black h-10 w-10 mr-2"></div>
+                    <div className="rounded-full  h-10 w-10 mr-2">
+                      <img
+                        className="rounded-full w-full h-full object-cover"
+                        src={pic}
+                      />
+                    </div>
                   )}
                   <div
                     className={
