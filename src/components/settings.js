@@ -4,7 +4,7 @@ import { MdDarkMode } from "react-icons/md";
 
 function Settings({ backChat }) {
   return (
-    <div className="rounded-lg bg-blue-300 grid grid-rows-5 col-span-7">
+    <div className="rounded-lg bg-gray-100 grid grid-rows-5 col-span-7">
       {/* HEADERS */}
       <div className="flex justify-between col-span-7">
         <div class="p-4 rounded-t">
@@ -16,26 +16,27 @@ function Settings({ backChat }) {
             className="cursor-pointer"
           />
         </div>
-        <div className="text-black text-center ">
-          <h1 class=" mt-2 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
-            <span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
-              Settings
-            </span>
-          </h1>
+        <div className="p-2 items-center flex">
+          <div className="w-20 ml-2 h-20 rounded-full bg-black"></div>
+          <div className="w-20 ml-2 h-20 rounded-full bg-black"></div>
+          <div className="w-20 ml-2 h-20 rounded-full bg-black"></div>
+          <div className="w-20 ml-2 h-20 rounded-full bg-black"></div>
         </div>
         <div className="p-4">
           <MdDarkMode size={30} color="dimgray" />
         </div>
       </div>
-      <div className="bg-yellow-100 col-span-1 border-t-4 rounded-bl  rounded-tl-full row-span-4 row-start-2">
-        <div className="flex items-center h-5/6 justify-center">
-          <div className="m-auto "></div>
+      <div className="border-t-2 border-gray-400 bg-gray-100 col-span-7 row-span-4 flex justify-between ">
+        <div className="w-1/6 border-r-2 border-gray-400">
+          <h1 className="text-center text-black">Friend Requests</h1>
+          {/* Buraya arkadaş istekleri gelecek */}
+          <div className="bg-red-300 text-black mt-5">n-y</div>
+          <h1 className="text-black">Added Friend</h1>
+          <form></form>
         </div>
+        <div className=" w-4/6">asd</div>
+        <div className="bg-gray-200 w-1/6">asd</div>
       </div>
-      <div className="bg-yellow-200 col-span-5  border-t-4 rounded-bl row-span-4 row-start-2">
-        asdlfjlasdk
-      </div>
-      <div className="bg-yellow-200 col-span-1 border-t-4 rounded-br  rounded-tr-full row-span-4 row-start-2"></div>
     </div>
   );
 }
