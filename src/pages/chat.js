@@ -34,10 +34,14 @@ function Chat() {
               userId={userId}
               username={username}
             />
-            <Message userId={userId} selectedUser={selectedUser} />
+            <Message
+              openSettings={handleOpen}
+              userId={userId}
+              selectedUser={selectedUser}
+            />
           </>
         )}
-        {openSetting && <Settings backChat={handleBack} />}
+        {openSetting && <Settings userId={userId} backChat={handleBack} />}
       </div>
     </div>
   );
