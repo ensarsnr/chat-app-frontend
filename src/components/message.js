@@ -9,7 +9,7 @@ import NoMessage from "./no_message";
 import useWindowSize from "@/hooks/useWindowSize";
 import Start from "./start";
 
-function Message({ userId, selectedUser }) {
+function Message({ openSettings, userId, selectedUser }) {
   //Hooks
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
@@ -173,7 +173,7 @@ function Message({ userId, selectedUser }) {
           </form>
         </div>
       )}
-      {open === false && <Start />}
+      {open === false && <Start openSettings={openSettings} />}
     </div>
   );
 }
